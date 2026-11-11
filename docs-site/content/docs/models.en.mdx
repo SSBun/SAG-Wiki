@@ -58,9 +58,21 @@ The service must implement the Jev judging API. For the CLI, use `sag config --u
 
 ### Available models and model name
 
-**Available models · one per line** controls the answer models shown in the UI. Enter an exact supported model ID on each line, without commas. Duplicates are removed on save. Connection testing uses the first entry.
+**Available models · one per line** controls the answer models shown in the UI. Enter an exact supported model ID on each line, without commas. Duplicates are removed on save. The connection check uses the model and effort selected in **Model for reasoning settings** below.
 
 For Jev, enter one model ID in **Model name**. The current default is `jev-latest`; verify availability with your provider.
+
+### Reasoning effort
+
+On the answer card, select an available model in **Model for reasoning settings**, then open **Reasoning effort**. This shares the saved per-model setting with Chat settings and the chat composer. Save changes to apply them. Selecting a model for configuration does not change the model used by the current conversation.
+
+For `gpt-6.1-sol` at the official OpenAI URL, `https://api.openai.com/v1`, the options are **Default, Low, Medium, High and Very high**. Default omits the parameter; the other options send `reasoning_effort` as `low`, `medium`, `high` and `xhigh`. Default uses the service default and does not disable reasoning. Live requests on 2026-11-11 verified these four explicit values. Although the model page lists `max`, the Chat Completions endpoint rejected that value, so it is not offered.
+
+Other models and proxy URLs show only mapped levels. Unknown model/service combinations retain Default. A model name does not establish a proxy's parameter support. This option does not apply to Jev or Decisions.
+
+Official tool calling for `gpt-6.1-sol` requires the Responses API. This app currently uses Chat Completions for chat. Reasoning levels work for text generation, but this change does not add SAG or MCP tool calling for that model.
+
+![Per-model reasoning effort on the provider settings page](/images/product-provider-thinking-en.png)
 
 ### API key
 

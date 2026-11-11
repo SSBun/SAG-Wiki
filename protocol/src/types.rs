@@ -8,6 +8,7 @@ pub enum ReasoningEffort {
     Low,
     Medium,
     High,
+    Xhigh,
     Max,
 }
 

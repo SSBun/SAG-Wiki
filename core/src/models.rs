@@ -795,13 +795,13 @@ pub async fn test_connection(
         json!({"model":config.model,"input":"This is a connection test.","questions":[{"type":"predicate","name":"test","instructions":"Does the input explicitly state that this is a connection test?"}]})
     } else if kind == "jev" {
         json!({"model":config.model,"state":"Connection test","questions":{"test":{"type":"noul","instructions":{"question":"Is this a connection test?"},"criteria":{"true":"It is a connection test.","false":"It is not a connection test."}}}})
-    } else if reqwest::Url::parse(&config.url)?.host_str() == Some("api.openai.com") {
-        let mut payload = payload(config, vec![json!({"role":"user","content":"Reply with OK."})], false)?;
-        payload["store"] = json!(false);
-        payload["max_completion_tokens"] = json!(1024);
-        payload
     } else {
-        json!({"model":config.model,"messages":[{"role":"user","content":"Reply with OK."}],"max_tokens":8})
+        let mut payload = payload(config, vec![json!({"role":"user","content":"Reply with OK."})], false)?;
+        if reqwest::Url::parse(&config.url)?.host_str() == Some("api.openai.com") {
+            payload["store"] = json!(false);
+            payload["max_completion_tokens"] = json!(1024);
+        }
+        payload
     };
     let data: Value = request(
         client,

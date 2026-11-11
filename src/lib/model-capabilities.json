@@ -2,6 +2,19 @@
   "version": 1,
   "models": [
     {
+      "ids": ["gpt-6.1-sol"],
+      "hosts": ["api.openai.com"],
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "context_window": 1050000,
+      "default_parameters": {},
+      "levels": [
+        {"value": "low", "parameters": {"reasoning_effort": "low"}},
+        {"value": "medium", "parameters": {"reasoning_effort": "medium"}},
+        {"value": "high", "parameters": {"reasoning_effort": "high"}},
+        {"value": "xhigh", "parameters": {"reasoning_effort": "xhigh"}}
+      ]
+    },
+    {
       "ids": ["qwen3.6-flash"],
       "hosts": ["api.302.ai", "api.302ai.cn", "dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "dashscope-us.aliyuncs.com"],
       "source": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking",

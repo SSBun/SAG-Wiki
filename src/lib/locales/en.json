@@ -1,4 +1,7 @@
 {
+  "配置思考强度的模型": "Model for reasoning settings",
+  "按模型保存，与问答设置共用；测试连接使用此模型及档位。": "Saved per model and shared with chat settings. The connection check uses this model and effort.",
+  "很高": "Very high",
   "决策接口协议": "Decision API protocol",
   "填写支持 Chat Completions 和工具调用的 OpenAI 模型 ID；Decisions 模型在下方配置。": "Enter OpenAI model IDs that support Chat Completions and tool calling. Configure Decisions models below.",
   "使用 OpenAI Decisions 判断原文相关性。当前官方支持 gpt-6-luna；概率分数与 Noul 分数的校准可能不同。": "Use OpenAI Decisions to judge passage relevance. The official API currently supports gpt-6-luna. Probability and Noul scores can have different calibration.",

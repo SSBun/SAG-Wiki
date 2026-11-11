@@ -1,6 +1,6 @@
 import catalog from './model-capabilities.json';
-export type ReasoningEffort = 'none'|'low'|'medium'|'high'|'max';
-export const reasoningLabels:Record<ReasoningEffort,string>={none:'关闭',low:'低',medium:'中',high:'高',max:'极高'};
+export type ReasoningEffort = 'none'|'low'|'medium'|'high'|'xhigh'|'max';
+export const reasoningLabels:Record<ReasoningEffort,string>={none:'关闭',low:'低',medium:'中',high:'高',xhigh:'很高',max:'极高'};
 
 export function modelCapability(model:string,endpoint:string){
  let host:string;

@@ -100,7 +100,11 @@ Location: **Settings → Q&A settings**. Select the answer model you want to con
 | Built-in SAG tools | Allow local search, reading, matching, time and calculations | Disable the group or individual tools. Semantic search also requires Jev. |
 | External MCP bindings | Select external servers and tools for the model | Connection details are shared; bindings and enabled tools are per model. |
 
-Use the reasoning options actually shown by the UI. Some models offer Off, Low, Medium, High or Max. Unsupported means the specific model/service combination has no mapped reasoning parameter; it does not mean the model is unusable. Restore Default in that case.
+Use the reasoning options actually shown by the UI. Some models offer Off, Low, Medium, High, Very high or Maximum. You can also configure the model and reasoning level under **Settings → Model settings → Chat model (LLM)**. Both settings pages and the chat composer share the same saved per-model value.
+
+For `gpt-6.1-sol` at the official OpenAI endpoint, the mapped levels are Low, Medium, High, Very high (`low / medium / high / xhigh`) and Default. Default omits the effort parameter. The model page lists `max`, but the Chat Completions endpoint rejected it in live verification on 2026-11-11, so it is not offered. Official tool calling for this model requires Responses; this reasoning change does not add tool support to the existing Chat Completions path.
+
+Unsupported means the specific model/service combination has no mapped reasoning parameter; it does not mean the model is unusable. Restore Default in that case.
 
 A system prompt does not replace connection settings or add tool support to an incompatible model. See [MCP and tool bindings](/en/docs/mcp) for setup, testing and confirmations.
 

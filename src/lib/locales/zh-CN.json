@@ -1,4 +1,7 @@
 {
+  "配置思考强度的模型": "配置思考强度的模型",
+  "按模型保存，与问答设置共用；测试连接使用此模型及档位。": "按模型保存，与问答设置共用；测试连接使用此模型及档位。",
+  "很高": "很高",
   "决策接口协议": "决策接口协议",
   "填写支持 Chat Completions 和工具调用的 OpenAI 模型 ID；Decisions 模型在下方配置。": "填写支持 Chat Completions 和工具调用的 OpenAI 模型 ID；Decisions 模型在下方配置。",
   "使用 OpenAI Decisions 判断原文相关性。当前官方支持 gpt-6-luna；概率分数与 Noul 分数的校准可能不同。": "使用 OpenAI Decisions 判断原文相关性。当前官方支持 gpt-6-luna；概率分数与 Noul 分数的校准可能不同。",
