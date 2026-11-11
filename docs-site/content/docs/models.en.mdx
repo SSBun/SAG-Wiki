@@ -20,7 +20,7 @@ Local indexing and quick search need neither model. Jev alone enables semantic r
 
 ### Provider
 
-Selecting a provider fills its endpoint. Answer providers include OpenAI, DeepSeek, GLM, OpenRouter, 302.AI and Custom. Jev providers include 302.AI, OpenRouter, Typesafe and Custom.
+Selecting a provider fills its endpoint. Answer providers include OpenAI, DeepSeek, GLM, OpenRouter, 302.AI and Custom. Jev providers include OpenAI, 302.AI, OpenRouter, Typesafe and Custom.
 
 Answer generation and Jev judging use different APIs. Endpoints are not interchangeable simply because they share a provider. A custom service must support the relevant API.
 
@@ -30,7 +30,24 @@ Enter the API base URL provided by the service, not its web chat address. Preset
 
 When switching to a different service origin, supply that provider's API key. The app does not automatically reuse the previous provider's key with the new origin.
 
-Jev accepts a base URL such as `http://127.0.0.1:8000/v1`, or a complete `/systemone` or `/decisions` endpoint. The endpoint suffix is not added twice.
+Jev accepts a base URL such as `http://127.0.0.1:8000/v1`, or a complete `/systemone` or `/decisions` endpoint. The endpoint suffix is not added twice. For base URLs, the selected decision protocol determines the suffix.
+
+### OpenAI configuration
+
+Select **OpenAI** on the answer card. Use `https://api.openai.com/v1`, enter one available model ID per line and supply an OpenAI API key. Models must support **Chat Completions and tool calling**. Models that only support Responses cannot be used here. The connection check verifies a text reply; check tool calling separately in Q&A.
+
+Select **OpenAI** on the Jev card to set **OpenAI Decisions**, API key authentication and the `gpt-6-luna` model. The official Decisions reference currently lists only this model; access depends on your account. Enter a key in each card. A ChatGPT or Codex subscription login does not replace an API key.
+
+**Decision API protocol** distinguishes two formats:
+
+- **Typesafe Noul** preserves the `state` and `noul` format used by the existing 302.AI, Typesafe and OpenRouter decision integrations.
+- **OpenAI Decisions** sends `input` and a `predicate` question array to `/v1/decisions`. The returned `probability` becomes the passage relevance score. A proxy must implement this same protocol.
+
+The scores can have different calibration. After switching, check retrieval with known questions and relevant passages. A probability does not guarantee correctness, and existing Noul thresholds may not have the same effect. Refusals, mismatched candidate counts or names, and invalid probabilities produce errors instead of zero scores.
+
+![OpenAI Decisions protocol, model and connection settings](/images/product-openai-decisions-en.png)
+
+The selected protocol and model are saved with settings. Existing configurations without a protocol field retain Typesafe Noul. Test the connection, then save settings.
 
 ### Jev authentication
 

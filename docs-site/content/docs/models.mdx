@@ -20,7 +20,7 @@ description: "配置回答模型、Jev 与 MinerU 文档解析，并验证连接
 
 ### 供应商
 
-选择供应商后会填入对应接口地址。问答模型提供 OpenAI、DeepSeek、GLM、OpenRouter、302.AI 和自定义；Jev 提供 302.AI、OpenRouter、Typesafe 和自定义。
+选择供应商后会填入对应接口地址。问答模型提供 OpenAI、DeepSeek、GLM、OpenRouter、302.AI 和自定义；Jev 提供 OpenAI、302.AI、OpenRouter、Typesafe 和自定义。
 
 问答接口和 Jev 判断接口是两类接口，不能只因供应商相同就互换地址。自定义服务必须兼容对应接口。
 
@@ -30,7 +30,24 @@ description: "配置回答模型、Jev 与 MinerU 文档解析，并验证连接
 
 切换到不同服务来源后，需要填写新供应商的 API Key。应用不会把原供应商密钥直接用于新的来源。
 
-Jev 可填写基础地址（如 `http://127.0.0.1:8000/v1`），也可填写完整的 `/systemone` 或 `/decisions` 接口地址，程序不会重复追加接口路径。
+Jev 可填写基础地址（如 `http://127.0.0.1:8000/v1`），也可填写完整的 `/systemone` 或 `/decisions` 接口地址，程序不会重复追加接口路径。基础地址会按所选决策协议追加 `/systemone` 或 `/decisions`。
+
+### OpenAI 配置
+
+问答卡片选择 **OpenAI**，接口地址为 `https://api.openai.com/v1`。每行填写一个账号可用、支持 **Chat Completions 和工具调用**的模型 ID，并填写 OpenAI API Key。这里只支持该聊天端点；仅支持 Responses 的模型不能直接使用。连接测试检查普通文本回复，工具调用能力仍需在实际问答中确认。
+
+在 Jev 卡片选择 **OpenAI**，会自动选择 **OpenAI Decisions** 协议、API Key 鉴权和 `gpt-6-luna` 模型。OpenAI 官方文档目前仅列出此 Decisions 模型，实际权限以账号为准。两张卡片分别填写密钥；ChatGPT／Codex 订阅登录不能代替 API Key。
+
+**决策接口协议**区分两种格式：
+
+- **Typesafe Noul**：保留现有 302.AI、Typesafe 和 OpenRouter 决策接口的 `state`／`noul` 格式。
+- **OpenAI Decisions**：使用 `/v1/decisions` 的 `input` 和 `predicate` 问题数组，将返回的 `probability` 用于原文相关性评分。代理服务也必须实现此协议。
+
+两种评分的校准可能不同。切换后应使用已知问题检查相关片段与检索结果；概率并不保证事实正确，也不能据此认定原有 Noul 筛选阈值具有同等效果。返回拒绝、候选数量或标识不匹配、无效概率时，应用报告错误，不将其当成零分。
+
+![OpenAI Decisions 的协议、模型与连接设置](/images/product-openai-decisions-cn.png)
+
+协议选择和模型会随设置保存；旧配置缺少协议字段时继续使用 Typesafe Noul。请先测试连接，再保存设置。
 
 ### Jev 鉴权方式
 

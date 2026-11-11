@@ -57,7 +57,16 @@
   }
  }
  function changeAddress(kind:ModelKind,address:string){if(!sameProviderOrigin(settings[kind].url,address)){if(kind==='answer')answerKey='';else jevKey='';autoFilledKey=null;}settings[kind].url=address;if(providerChoice[kind]!=='custom')providerChoice[kind]=providerFor(kind,address);status='';error='';}
- function changeProvider(kind:ModelKind,id:string){const current=providerChoice[kind];providerChoice[kind]=id;if(id==='custom'||id===current)return;changeAddress(kind,providerFor(kind,value[kind].url)===id?value[kind].url:providers[kind].find(provider=>provider.value===id)!.url);}
+ function changeProvider(kind:ModelKind,id:string){
+  const current=providerChoice[kind];providerChoice[kind]=id;
+  if(id==='custom'||id===current)return;
+  changeAddress(kind,providerFor(kind,value[kind].url)===id?value[kind].url:providers[kind].find(provider=>provider.value===id)!.url);
+  if(kind==='jev'){
+   settings.jev.decision_protocol=id==='openai'?'openai':'typesafe';
+   if(id==='openai')settings.jev.auth_mode='bearer';
+   settings.jev.model=providerFor('jev',value.jev.url)===id?value.jev.model:id==='openai'?'gpt-6-luna':'jev-latest';
+  }
+ }
  $:applyTheme(settings.theme);
  onDestroy(()=>{if(!languageSaved)setLanguage(value.language??'zh-CN');applyTheme(value.theme)});
  $:pages=[['general',$t("通用"),'settings'],['appearance',$t("外观"),'sun'],['files',$t("文件设置"),'folder'],['clipper',$t('网页剪藏'),'globe'],['shortcuts',$t("快捷键"),'panel'],['models',$t("模型设置"),'plug'],['answer',$t("问答设置"),'chat'],['retrieval',$t("搜索设置"),'search'],['cli',$t('CLI设置'),'codeBlock'],['privacy',$t("数据与隐私"),'globe'],['about',$t("关于"),'info']];
@@ -150,8 +159,11 @@
        <label class="field-label">{$t("接口地址")}<Input type="url" required value={settings[kind as ModelKind].url} oninput={event=>changeAddress(kind as ModelKind,event.currentTarget.value)} spellcheck="false"/></label>
        {#if kind==='answer'}
         <label class="field-label">{$t("可选模型 · 每行一个")}<Textarea required bind:value={models} rows={3} spellcheck="false"/></label>
+        {#if providerChoice.answer==='openai'}<p class="settings-help">{$t('填写支持 Chat Completions 和工具调用的 OpenAI 模型 ID；Decisions 模型在下方配置。')}</p>{/if}
         <label class="field-label"><span class="key-field-label">{$t("API 密钥")}{#if providerChoice.answer==='302'}<a class="settings-key-link" href="https://302.ai/api-keys/list" target="_blank" rel="noreferrer" on:click={event=>openAboutLink(event,'302-api-keys')}>{$t("获取 API Key")}</a>{/if}</span><div class="key-field"><Input type={showAnswer?'text':'password'} value={answerKey} oninput={event=>changeKey('answer',event.currentTarget.value)} placeholder={savedKeys.answer?$t("已保存在本机；留空保持原密钥"):$t("填写 API 密钥")} autocomplete="off" spellcheck="false"/><Button.Root type="button" onclick={()=>showAnswer=!showAnswer}>{showAnswer?$t("隐藏"):$t("显示")}</Button.Root></div></label>
        {:else}
+        <label class="field-label">{$t('决策接口协议')}<Select label={$t('决策接口协议')} value={settings.jev.decision_protocol??'typesafe'} items={[{value:'typesafe',label:'Typesafe Noul'},{value:'openai',label:'OpenAI Decisions'}]} onValueChange={protocol=>{settings.jev.decision_protocol=protocol as 'typesafe'|'openai';status='';error='';}}/></label>
+        {#if settings.jev.decision_protocol==='openai'}<p class="settings-help">{$t('使用 OpenAI Decisions 判断原文相关性。当前官方支持 gpt-6-luna；概率分数与 Noul 分数的校准可能不同。')}</p>{/if}
         <label class="field-label">{$t("模型名称")}<Input required bind:value={settings.jev.model} spellcheck="false"/></label>
         <label class="field-label auth-field">{$t("鉴权方式")}<Select label={$t("Jev 鉴权方式")} value={settings.jev.auth_mode??'bearer'} items={[{value:'bearer',label:$t('API Key')},{value:'none',label:$t('无需鉴权')}]} onValueChange={changeJevAuth}/></label>
         {#if settings.jev.auth_mode!=='none'}

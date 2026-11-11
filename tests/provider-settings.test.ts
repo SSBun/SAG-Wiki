@@ -53,11 +53,11 @@ it('LLM 六个供应商自动填入地址，自定义地址与模型列表可以
  expect(onSave.mock.calls[0][0].answer).toMatchObject({url:'https://proxy.example/v1',model:'first',models:['first','second']});
 });
 it('Jev 预设供应商填入对应评分接口，并提供自定义选项',async()=>{
- expect(providers.jev.map(provider=>provider.label)).toEqual(['302.AI','OpenRouter','Typesafe','自定义']);
+ expect(providers.jev.map(provider=>provider.label)).toEqual(['OpenAI','302.AI','OpenRouter','Typesafe','自定义']);
  await setup();
  for(const provider of providers.jev.filter(provider=>provider.value!=='custom')){await choose('jev',provider.value);expect(address('jev').value).toBe(provider.url);}
  trigger('jev').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
- await vi.waitFor(()=>expect(document.querySelectorAll('[role=option]')).toHaveLength(4));
+ await vi.waitFor(()=>expect(document.querySelectorAll('[role=option]')).toHaveLength(5));
  expect(document.querySelector('[role=option][data-value=custom]')).not.toBeNull();
 });
 it('Jev 自定义地址用于测试连接，保存后重新打开仍显示该地址',async()=>{
