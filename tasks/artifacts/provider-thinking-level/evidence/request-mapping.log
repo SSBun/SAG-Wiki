@@ -1,0 +1,5 @@
+profile={"system_prompt":"","sag2_enabled":true,"mcp_servers":[],"mcp_tools":{}} request_effort=None
+profile={"system_prompt":"","reasoning_effort":"low","sag2_enabled":true,"mcp_servers":[],"mcp_tools":{}} request_effort=Some(String("low"))
+profile={"system_prompt":"","reasoning_effort":"medium","sag2_enabled":true,"mcp_servers":[],"mcp_tools":{}} request_effort=Some(String("medium"))
+profile={"system_prompt":"","reasoning_effort":"high","sag2_enabled":true,"mcp_servers":[],"mcp_tools":{}} request_effort=Some(String("high"))
+profile={"system_prompt":"","reasoning_effort":"xhigh","sag2_enabled":true,"mcp_servers":[],"mcp_tools":{}} request_effort=Some(String("xhigh"))

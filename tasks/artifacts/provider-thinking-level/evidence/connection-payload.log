@@ -1,0 +1,5 @@
+model=qwen3.6-flash effort=Some(High) result=连接成功 payload={"model":"qwen3.6-flash","messages":[{"role":"user","content":"Reply with OK."}],"stream":false,"enable_thinking":true,"temperature":0,"thinking_budget":8192}
+model=qwen3.6-flash effort=None result=连接成功 payload={"model":"qwen3.6-flash","messages":[{"role":"user","content":"Reply with OK."}],"stream":false,"enable_thinking":false,"temperature":0}
+model=deepseek-flash effort=Some(High) result=连接成功 payload={"model":"deepseek-flash","messages":[{"role":"user","content":"Reply with OK."}],"stream":false,"reasoning_effort":"high"}
+model=deepseek-flash effort=None result=连接成功 payload={"model":"deepseek-flash","messages":[{"role":"user","content":"Reply with OK."}],"stream":false}
+unsupported_effort_error=当前服务或模型未适配这个思考强度，请在问答设置中恢复默认

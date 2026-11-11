@@ -1,0 +1,13 @@
+model_metadata_status=200 OK
+effort=Low response="OK" input_tokens=Some(89) output_tokens=Some(4)
+effort=Medium response="OK" input_tokens=Some(89) output_tokens=Some(19)
+effort=High response="OK" input_tokens=Some(89) output_tokens=Some(31)
+effort=Xhigh response="OK" input_tokens=Some(89) output_tokens=Some(42)
+Error: 模型请求失败（HTTP 400）：{
+  "error": {
+    "message": "Unsupported value: 'reasoning_effort' does not support 'max' with this model. Supported values are: 'low', 'medium', 'high', and 'xhigh'.",
+    "type": "invalid_request_error",
+    "param": "reasoning_effort",
+    "code": "unsupported_value"
+  }
+}

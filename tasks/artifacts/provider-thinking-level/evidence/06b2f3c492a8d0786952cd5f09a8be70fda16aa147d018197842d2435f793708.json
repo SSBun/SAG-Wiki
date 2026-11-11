@@ -1,0 +1,343 @@
+{
+  "schema": "task-snapshot/v1",
+  "taskId": "provider-thinking-level",
+  "files": [
+    {
+      "path": "core/src/models.rs",
+      "sha256": "d8fa3800310597d19677089b7bbed235b9589fa21e235f290067ff996c6514a5",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "33a0483bbf84d28e749a0fffafdb8f60a1e2e267"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "33a0483bbf84d28e749a0fffafdb8f60a1e2e267",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "core/src/service.rs",
+      "sha256": "929b37bc1f258c1a87a604694ad0f59feba83dc7b89c20c55df8e59176a62d67",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "0f57a3e84e518f2af90df968d0e36134b2036f6b"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "0f57a3e84e518f2af90df968d0e36134b2036f6b",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/content/docs/chat.en.mdx",
+      "sha256": "19b31f4bc902cae26cc29613041e887d30afa293283fdb9f6384d11644ee23e2",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "d28a996e34520efea14db0f1e855765470d5278d"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "d28a996e34520efea14db0f1e855765470d5278d",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/content/docs/chat.mdx",
+      "sha256": "dd56b4b7e45d65e159beb57edebfd3d647d7216922d2cbaa21db8ae49cf1c58b",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "96a7a2a091e850a39eba431920f104fec7a9b54f"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "96a7a2a091e850a39eba431920f104fec7a9b54f",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/content/docs/models.en.mdx",
+      "sha256": "80163bc11fb71a132d7c6949bb0dd3f4267420a26c3fa8f815fb38b58aa97849",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "f536e01b1178a3fd8d673ad1259967a93cff2a9a"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "f536e01b1178a3fd8d673ad1259967a93cff2a9a",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/content/docs/models.mdx",
+      "sha256": "8aa5212c62fba69518aea89b0165fa75f6a329ca2e583a57030caf9b54d7cda8",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "81983c7f0e7ecce47b81e64c5cb42c1f495d15d3"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "81983c7f0e7ecce47b81e64c5cb42c1f495d15d3",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-chat-settings-cn.png",
+      "sha256": "dc91ccbd29987ffb8f0deb80c033574aebe9e3527f40e93ef722df50f91e22f3",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "4b8eed455821715d6a2d73249fca68b21cf568a5"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "4b8eed455821715d6a2d73249fca68b21cf568a5",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-chat-settings-en.png",
+      "sha256": "128cc11c1cda8fc7836cdb546e16328169682b8f0f20857322f3f26797c49a86",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "89e10da0d3945b9ed861ba30a2ac34e1f7afb805"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "89e10da0d3945b9ed861ba30a2ac34e1f7afb805",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-models-cn.png",
+      "sha256": "2f0d02fa57bc43dd46a35b2e25d51b716d66c90da0ccf575cdbff9913e7375e4",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "4263a77007225b1da6ef1e93251b5d550b9cf6d5"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "4263a77007225b1da6ef1e93251b5d550b9cf6d5",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-models-en.png",
+      "sha256": "90e6aee8d5a69ba2e7d6ac53f2b5ff819363c479bafe875b2fbcf2f0983fa6e1",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "a38ea628ca810f2e6fbfcf9c71038f7be3daa58f"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "a38ea628ca810f2e6fbfcf9c71038f7be3daa58f",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-provider-thinking-cn.png",
+      "sha256": "dfe7c3c442775afe52b8b26ba961bcabbb8a196e15b8c4d852d0d00b734ffb71",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    },
+    {
+      "path": "docs-site/public/images/product-provider-thinking-en.png",
+      "sha256": "1c9595fa29fca4a045e4d32600dbc1817b3d72dec46df9107f1e5995ae9f4c55",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    },
+    {
+      "path": "protocol/src/types.rs",
+      "sha256": "577bef3951d187aedd6d1d82237b4f300ac1528358b98858554672e7a0049586",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "cb99168cd12b7351d033867eec633118490db01b"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "cb99168cd12b7351d033867eec633118490db01b",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/components/ReasoningControl.svelte",
+      "sha256": "5b915f8c4108525d1c0d288f5de2846d7b5040258f2ef5bea77011fbbf810957",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "f1f4ae3bfcc8b8a0bb5d2ef69da261cc33690b7d"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "f1f4ae3bfcc8b8a0bb5d2ef69da261cc33690b7d",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/components/Settings.svelte",
+      "sha256": "754e0d88e7cb523371d75db6048e3cf31580429171dcee88b0c88ff716d3965e",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "1498beabc8b827cdb6d97e9382491d50bb7a2b0e"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "1498beabc8b827cdb6d97e9382491d50bb7a2b0e",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/lib/locales/en.json",
+      "sha256": "8d8f0af7f859f2406f098c4bdbce5c85e536a55cd593da4b0f8f24c19e992d28",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "4e91fe7a6dc4a5c0421d2982458b3aba80da4511"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "4e91fe7a6dc4a5c0421d2982458b3aba80da4511",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/lib/locales/zh-CN.json",
+      "sha256": "d3a4fc993ab62f6f61d4b357a08231830b1c311d7747d8dddb1ef0ea2a71bf59",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "6b14ffd8a3248f82700464d9c375a763a294f43a"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "6b14ffd8a3248f82700464d9c375a763a294f43a",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/lib/model-capabilities.json",
+      "sha256": "c9bde4d8eacc1947943adf7bc91c2ff471a581139a4c6b4babd2ccb38c790a05",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "3ab4f65bc6139c18f92462200b3c21a2e4905787"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "3ab4f65bc6139c18f92462200b3c21a2e4905787",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/lib/reasoning.ts",
+      "sha256": "6b930391d5d5be30f79b0c2d71a2bf35335668100f9375e37872638e17414088",
+      "git": {
+        "head": {
+          "mode": "100644",
+          "object": "6fc4857e4febf7d56c1f64bffde36e1661aec276"
+        },
+        "index": [
+          {
+            "mode": "100644",
+            "object": "6fc4857e4febf7d56c1f64bffde36e1661aec276",
+            "stage": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "tasks/artifacts/provider-thinking-level/evidence/live-probe.log",
+      "sha256": "cb504f5923dcab276d48f3c0368e35787838a8e7d2a03e45005acb4da13cd3f4",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    },
+    {
+      "path": "tasks/artifacts/provider-thinking-level/evidence/request-mapping.log",
+      "sha256": "eb100b09a767b5b06c0486616f5f8d882491b986238f70deba254655c369d169",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    },
+    {
+      "path": "tasks/artifacts/provider-thinking-level/evidence/thinking_level_probe.rs",
+      "sha256": "72dae37ed63871253eacb5af1ceaac179bc0d22bc85a60538c1e20ede06ef23d",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    },
+    {
+      "path": "tasks/artifacts/provider-thinking-level/evidence/thinking_request_inspect.rs",
+      "sha256": "dae4665584a89f70444213c2d221ee2919a11acbbbc9848f716928e00c33d1aa",
+      "git": {
+        "head": null,
+        "index": []
+      }
+    }
+  ]
+}
